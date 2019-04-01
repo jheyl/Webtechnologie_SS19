@@ -1,0 +1,11 @@
+span {
+    background-color: aqua;
+}
+div { 
+    background-color: red;
+}
+#special {
+    background-color: aqua;
+    width: 90%;
+    margin: auto;
+}
