@@ -1,0 +1,58 @@
+.exampleDiv {
+    width: 10vw;
+    height: 10vh;
+}
+#blue {
+    background-color: blue;
+    /*first*/
+    float: right; 
+
+}
+#green {
+    background-color: green;
+    /*second*/
+    /*  float: left;  */
+    /*thrird*/
+    float: right; 
+}
+#red {
+    background-color: red;
+    /*fourth*/
+    float: right; 
+}
+
+section {
+    background-color: rgba(160, 146, 146, 0.434);
+    /*fifth*/
+    clear: both;
+
+    /*sixth*/
+    /*margin has no effect here. Margin stays behind floats*/
+    margin: 100px;
+}
+
+/*seventh*/
+/* fixing margin issues */
+/* #wrapper:after {
+    content:"";
+    display: block;
+    clear: both;
+} */
+
+div.relative {
+    position: relative;
+    width: 400px;
+    height: 200px;
+    border: 3px solid #73AD21;
+  } 
+  
+  div.absolute {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    width: 200px;
+    height: 100px;
+    border: 3px solid #73AD21;
+  }
+
+  

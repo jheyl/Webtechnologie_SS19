@@ -1,0 +1,12 @@
+#wrapper {
+    width: 90vw;
+    margin: auto;
+    margin-top: 2em;
+}
+img {
+    float: left;
+    padding: 1em 0.3em;
+}
+.rotate90 {
+    transform: rotate(90deg);
+}
