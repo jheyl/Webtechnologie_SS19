@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Grid-Layout</title>
+    <style>
+        .container {
+            display: grid;
+            /*
+            Äquivalent zu: 
+            grid-template-columns: 1fr 1fr 1fr;
+            */
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 1%;
+            grid-auto-rows: minmax(100px, auto);
+        }
+
+        .nested {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 0.5%;
+            grid-auto-rows: 100px;
+        }
+
+        p {
+            width: 1fr;
+        }
+
+        div>p {
+            background-color: #eee;
+        }
+
+        div>p:nth-child(odd) {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <p>Lorem ipsum dolor sit.</p>
+        <p>Lorem ipsum dolor sit.</p>
+        <p>Lorem ipsum dolor sit.</p>
+        <p>Lorem ipsum dolor sit.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, repellat deserunt. Rem suscipit pariatur
+            aliquid praesentium itaque odit, eos distinctio laboriosam dolore quos deserunt ad eveniet magni, corrupti
+            reiciendis optio facilis quas nostrum! Eius sint, rerum odit magnam sit eum praesentium magni molestiae,
+            fuga consequatur eaque voluptate reprehenderit quidem? Similique dolore repellendus ex magnam non quia nulla
+            at ut earum nobis sit blanditiis, adipisci incidunt sint eaque numquam debitis velit et quibusdam? Amet
+            laborum eveniet sapiente ut. Ab libero, cupiditate iure eveniet ex repellendus porro accusamus doloremque
+            pariatur quod beatae fuga corporis quibusdam. Repudiandae temporibus recusandae similique, sequi tenetur
+            ipsam.</p>
+        <div class="nested">
+            <p>Lorem, ipsum.</p>
+            <p>Lorem, ipsum.</p>
+            <p>Lorem, ipsum.</p>
+            <p>Lorem, ipsum.</p>
+            <p>Lorem, ipsum.</p>
+            <p>Lorem, ipsum.</p>
+            <p>Lorem, ipsum.</p>
+            <p>Lorem, ipsum.</p>
+            <p>Lorem, ipsum.</p>
+            <p>Lorem, ipsum.</p>
+            <p>Lorem, ipsum.</p>
+            <p>Lorem, ipsum.</p>
+        </div>
+        <p>Lorem ipsum dolor sit.</p>
+        <p>Lorem ipsum dolor sit.</p>
+        <p>Lorem ipsum dolor sit.</p>
+        <p>Lorem ipsum dolor sit.</p>
+        <p>Lorem ipsum dolor sit.</p>
+        <p>Lorem ipsum dolor sit.</p>
+        <p>Lorem ipsum dolor sit.</p>
+    </div>
+</body>
+
+</html>

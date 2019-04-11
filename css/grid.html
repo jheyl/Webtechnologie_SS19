@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Grid-Layout</title>
+    <style>
+        .container {
+            display: grid;
+            /*
+            Äquivalent zu: 
+            grid-template-columns: 1fr 1fr 1fr;
+            */
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 1em;
+        }
+
+        p {
+            width: 1fr;
+        }
+
+        div>p {
+            background-color: #eee;
+        }
+
+        div>p:nth-child(odd) {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus dignissimos, beatae dolor repellendus
+            labore magnam quia cum nesciunt facilis ullam, sapiente officia amet impedit tempora nostrum doloribus nisi
+            atque totam.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum dicta, hic reiciendis aliquam totam eum!
+            Distinctio aliquid enim ducimus reiciendis, id, sequi, minus vitae odit optio magnam culpa reprehenderit
+            debitis.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus impedit corporis odit quo, consequuntur
+            unde cumque fugit assumenda adipisci quisquam.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, ratione.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit laborum consectetur error impedit itaque
+            reprehenderit veniam. Ducimus, quisquam! Provident aliquid beatae odit atque culpa deleniti molestiae hic
+            eaque? Quo error numquam culpa fugiat. Beatae quod numquam quidem commodi amet accusantium?</p>
+    </div>
+</body>
+
+</html>
