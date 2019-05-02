@@ -9,6 +9,20 @@
             color: red;
             font-size: 48px;
         }
+
+
+        @media (min-width: 801px) {
+            body {
+                margin: 0 auto;
+                width: 800px;
+            }
+        }
+
+        @supports (display: grid) {
+            div {
+                display: grid;
+            }
+        }
     </style>
 </head>
 
