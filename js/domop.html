@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>some title</title>
+    <style>
+        main {
+            width: 50vh;
+            margin: auto;
+        }
+
+        li {
+            width: 100%;
+            height: 3rem;
+            color: white;
+        }
+
+        .freezing {
+            background-color: #0D7FFF;
+        }
+
+        .cold {
+            background-color: #1AC5EB;
+        }
+
+        .medium {
+            background-color: #FFDE0D;
+        }
+
+        .hot {
+            background-color: #FF002C;
+        }
+
+        .humidity {
+            background-color: #110DFF;
+        }
+
+        .pressure {
+            background-color: #EB601A;
+        }
+    </style>
+    <script>
+        function loadWeather() {
+            let xhttp = new XMLHttpRequest();
+            const cityField = document.getElementById('city');
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    const weather = JSON.parse(this.responseText).payload;
+                    const { main } = weather;
+                    const weatherElement = document.getElementById('wather');
+                    const ul = document.createElement("ul");
+                    deleteChildren(weatherElement);
+                    weatherElement.appendChild(ul);
+                    Object.keys(main).forEach(k => {
+                        const li = document.createElement("li");
+                        if (k.includes("temp")) {
+                            if (main[k] < 1) {
+                                li.setAttribute("class", "freezing");
+                            }
+                            else if (main[k] <= 15 && main[k] > 0) {
+                                li.setAttribute("class", "cold");
+                            }
+                            else if (main[k] > 15 && main[k] < 25) {
+                                li.setAttribute("class", "medium");
+                            }
+                            else if (main[k] > 25) {
+                                li.setAttribute("class", "hot");
+                            }
+                        }
+                        else {
+                            li.setAttribute("class", k);
+                        }
+                        //li.setAttribute("class", k);
+                        li.innerHTML = `${k}: ${main[k]}`;
+                        ul.appendChild(li);
+                    })
+                }
+            }
+            const city = cityField.value;
+            xhttp.open("GET", `http://85.214.53.171:8080/api/v1/weather/${city}`, true);
+            xhttp.send();
+
+            function deleteChildren(node) {
+                while (node.firstChild) {
+                    node.removeChild(node.firstChild);
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Awesome Weather</h1>
+    </header>
+    <main>
+        <input type="text" id="city">
+
+        <button type="button" onclick="loadWeather()">search</button>
+
+        <div id="wather"></div>
+    </main>
+    <footer></footer>
+</body>
+
+</html>

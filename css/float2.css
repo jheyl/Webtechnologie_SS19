@@ -5,40 +5,40 @@
 #blue {
     background-color: blue;
     /*first*/
-    /* float: right; */
+    float: right; 
 
 }
 #green {
     background-color: green;
     /*second*/
-    /*   float: left; */  
-    /* visibility: hidden; */
+     /* float: left;  */
+     /* visibility: hidden;  */
     /*thrird*/
-    /* float: right; */
+    float: right;
 }
 #red {
     background-color: red;
     /*fourth*/
-    /* float: right;  */
+    float: right; 
 }
 
 section {
     background-color: rgba(160, 146, 146, 0.434);
     /*fifth*/
-    /*clear: both;*/
+    /* clear: both; */
 
     /*sixth*/
     /*margin has no effect here. Margin stays behind floats*/
-    /* margin: 100px; */
+    margin: 100px;
 }
 
 /*seventh*/
 /* fixing margin issues */
-/* #wrapper:after {
+#wrapper:after {
     content:"";
     display: block;
     clear: both;
-} */
+} 
 
 div.relative {
     position: relative;

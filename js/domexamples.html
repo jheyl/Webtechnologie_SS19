@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>some title</title>
+    <style>
+    </style>
+    <script>
+        const doIt = function doStuff() {
+            const childNodes = document.body.childNodes;
+
+            // Siblings over Parent
+            const node = document.getElementById('city');
+            const parent = node.parentNode;
+            const siblings = parent.childNodes; // including node
+            console.log(siblings);
+
+            // Siblings over nextSibling;
+            let siblings1 = [];
+            let sibling = node.nextElementSibling;
+            while (sibling) {
+                siblings1 = [...siblings1, sibling];
+                sibling = sibling.nextElementSibling;
+            }
+            console.log(siblings1); // all siblings without node
+        }
+        window.onload = doIt;
+        window.addEventListener()
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Awesome Weather</h1>
+    </header>
+    <main>
+        <input type="text" id="city">
+        <button type="button" id="someButton" onclick="loadWeather()">search</button>
+        <div id="weather"></div>
+    </main>
+    <footer></footer>
+</body>
+
+</html>

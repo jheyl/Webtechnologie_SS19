@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>some title</title>
+    <script>
+        function doSomething() {
+            console.log('Hello');
+        }
+        function onloadFunction() {
+            const button = document.getElementsByTagName('button')[0];
+            button.addEventListener('click', (event) => { console.log(event) });
+
+            //button.addEventListener('click', (event) => { event.stopPropagation() }, true);
+        }
+        window.onload = onloadFunction;
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Awesome Weather</h1>
+    </header>
+    <main>
+        <input type="text" id="city">
+        <button type="button" onclick="doSomething()">search</button>
+        <div id="wather"></div>
+    </main>
+    <footer></footer>
+</body>
+
+</html>
